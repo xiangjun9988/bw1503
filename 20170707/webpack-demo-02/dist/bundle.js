@@ -63,94 +63,11 @@
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 13);
+/******/ 	return __webpack_require__(__webpack_require__.s = 19);
 /******/ })
 /************************************************************************/
 /******/ ([
 /* 0 */
-/***/ (function(module, exports, __webpack_require__) {
-
-// style-loader: Adds some css to the DOM by adding a <style> tag
-
-// load the styles
-var content = __webpack_require__(4);
-if(typeof content === 'string') content = [[module.i, content, '']];
-// add the styles to the DOM
-var update = __webpack_require__(6)(content, {});
-if(content.locals) module.exports = content.locals;
-// Hot Module Replacement
-if(false) {
-	// When the styles change, update the <style> tags
-	if(!content.locals) {
-		module.hot.accept("!!C:\\Users\\gogogoal\\AppData\\Roaming\\npm\\node_global\\node_modules\\css-loader\\index.js!../node_modules/less-loader/dist/index.js!./style.less", function() {
-			var newContent = require("!!C:\\Users\\gogogoal\\AppData\\Roaming\\npm\\node_global\\node_modules\\css-loader\\index.js!../node_modules/less-loader/dist/index.js!./style.less");
-			if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
-			update(newContent);
-		});
-	}
-	// When the module is disposed, remove the <style> tags
-	module.hot.dispose(function() { update(); });
-}
-
-/***/ }),
-/* 1 */
-/***/ (function(module, exports) {
-
-//暴露接口
-module.exports = function(){
-	var oContent = document.createElement("section");
-	oContent.innerHTML = "这三天学了git，webpack，开心死了";
-	return oContent;
-}
-
-/***/ }),
-/* 2 */
-/***/ (function(module, exports) {
-
-// document.write("<footer>我是footer</footer>");
-//暴露接口
-module.exports = function(){
-	var oFooter = document.createElement("footer");
-	oFooter.innerHTML = "这是我们1503班特有的内容";
-	return oFooter;
-}
-
-/***/ }),
-/* 3 */
-/***/ (function(module, exports) {
-
-// document.write("<header>我是头部,口号：重复事情简单做</header>");
-//暴露接口
-module.exports = function(){
-	var oDom = document.createElement("header");
-	oDom.className = "hd";
-	oDom.innerHTML = "webpack是一个工程化工具，核心思想一切皆模块，按需加载";
-	return oDom;
-}
-
-// module.exports = {
-// 	title:"webpack",
-// 	content:"webpack是一个工程化工具，核心思想一切皆模块，按需加载"
-// }
-
-// module.exports = "webpack是一个工程化工具，核心思想一切皆模块，按需加载";
-
-/***/ }),
-/* 4 */
-/***/ (function(module, exports, __webpack_require__) {
-
-exports = module.exports = __webpack_require__(5)(undefined);
-// imports
-
-
-// module
-exports.push([module.i, "* {\n  margin: 0;\n  padding: 0;\n}\nbody header {\n  height: 60px;\n  background: red;\n}\nbody section {\n  height: 400px;\n  background: pink;\n}\nbody footer {\n  height: 80px;\n  background: pink;\n}\n", ""]);
-
-// exports
-
-
-/***/ }),
-/* 5 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(Buffer) {/*
@@ -229,10 +146,10 @@ function toComment(sourceMap) {
   return '/*# ' + data + ' */';
 }
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(10).Buffer))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(16).Buffer))
 
 /***/ }),
-/* 6 */
+/* 1 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /*
@@ -269,7 +186,7 @@ var stylesInDom = {},
 	singletonElement = null,
 	singletonCounter = 0,
 	styleElementsInsertedAtTop = [],
-	fixUrls = __webpack_require__(7);
+	fixUrls = __webpack_require__(9);
 
 module.exports = function(list, options) {
 	if(typeof DEBUG !== "undefined" && DEBUG) {
@@ -528,7 +445,124 @@ function updateLink(linkElement, options, obj) {
 
 
 /***/ }),
+/* 2 */
+/***/ (function(module, exports, __webpack_require__) {
+
+// style-loader: Adds some css to the DOM by adding a <style> tag
+
+// load the styles
+var content = __webpack_require__(8);
+if(typeof content === 'string') content = [[module.i, content, '']];
+// add the styles to the DOM
+var update = __webpack_require__(1)(content, {});
+if(content.locals) module.exports = content.locals;
+// Hot Module Replacement
+if(false) {
+	// When the styles change, update the <style> tags
+	if(!content.locals) {
+		module.hot.accept("!!C:\\Users\\gogogoal\\AppData\\Roaming\\npm\\node_global\\node_modules\\css-loader\\index.js!../node_modules/less-loader/dist/index.js!./style.less", function() {
+			var newContent = require("!!C:\\Users\\gogogoal\\AppData\\Roaming\\npm\\node_global\\node_modules\\css-loader\\index.js!../node_modules/less-loader/dist/index.js!./style.less");
+			if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+			update(newContent);
+		});
+	}
+	// When the module is disposed, remove the <style> tags
+	module.hot.dispose(function() { update(); });
+}
+
+/***/ }),
+/* 3 */
+/***/ (function(module, exports, __webpack_require__) {
+
+//暴露接口
+module.exports = function(){
+	__webpack_require__(10);
+	var oContent = document.createElement("section");
+	oContent.className = "wrap-content"
+	oContent.innerHTML = "这三天学了git，webpack，开心死了";
+	return oContent;
+}
+
+/***/ }),
+/* 4 */
+/***/ (function(module, exports) {
+
+// document.write("<footer>我是footer</footer>");
+//暴露接口
+module.exports = function(){
+	var oFooter = document.createElement("footer");
+	oFooter.innerHTML = "这是我们1503班特有的内容";
+	return oFooter;
+}
+
+/***/ }),
+/* 5 */
+/***/ (function(module, exports, __webpack_require__) {
+
+// document.write("<header>我是头部,口号：重复事情简单做</header>");
+//暴露接口
+module.exports = function(){
+	__webpack_require__(11);
+	var googleURL = __webpack_require__(13);
+	var oDom = document.createElement("header");
+	oDom.className = "hd";
+	var html = '<p class="slogon">webpack是一个工程化工具，核心思想一切皆模块，按需加载</p>'
+	    html += '<img class="logo" src="'+googleURL+'" alt="" />';
+	oDom.innerHTML = html;
+	return oDom;
+}
+
+// module.exports = {
+// 	title:"webpack",
+// 	content:"webpack是一个工程化工具，核心思想一切皆模块，按需加载"
+// }
+
+// module.exports = "webpack是一个工程化工具，核心思想一切皆模块，按需加载";
+
+/***/ }),
+/* 6 */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(0)(undefined);
+// imports
+
+
+// module
+exports.push([module.i, ".wrap-content {\n  background-image: url(" + __webpack_require__(12) + ");\n  transition: 1s;\n}\n.wrap-content:hover {\n  transform: scale(0.3);\n}\n", ""]);
+
+// exports
+
+
+/***/ }),
 /* 7 */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(0)(undefined);
+// imports
+
+
+// module
+exports.push([module.i, ".logo {\n  height: 60px;\n  float: left;\n}\n.slogon {\n  margin-left: 20px;\n  display: inline-block;\n  line-height: 60px;\n  color: #fff;\n}\n", ""]);
+
+// exports
+
+
+/***/ }),
+/* 8 */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(0)(undefined);
+// imports
+
+
+// module
+exports.push([module.i, "* {\n  margin: 0;\n  padding: 0;\n}\nheader {\n  height: 60px;\n  background: red;\n}\nsection {\n  height: 400px;\n  background: pink;\n}\nfooter {\n  height: 80px;\n  background: pink;\n}\n", ""]);
+
+// exports
+
+
+/***/ }),
+/* 9 */
 /***/ (function(module, exports) {
 
 
@@ -623,7 +657,71 @@ module.exports = function (css) {
 
 
 /***/ }),
-/* 8 */
+/* 10 */
+/***/ (function(module, exports, __webpack_require__) {
+
+// style-loader: Adds some css to the DOM by adding a <style> tag
+
+// load the styles
+var content = __webpack_require__(6);
+if(typeof content === 'string') content = [[module.i, content, '']];
+// add the styles to the DOM
+var update = __webpack_require__(1)(content, {});
+if(content.locals) module.exports = content.locals;
+// Hot Module Replacement
+if(false) {
+	// When the styles change, update the <style> tags
+	if(!content.locals) {
+		module.hot.accept("!!C:\\Users\\gogogoal\\AppData\\Roaming\\npm\\node_global\\node_modules\\css-loader\\index.js!../../node_modules/less-loader/dist/index.js!./content.less", function() {
+			var newContent = require("!!C:\\Users\\gogogoal\\AppData\\Roaming\\npm\\node_global\\node_modules\\css-loader\\index.js!../../node_modules/less-loader/dist/index.js!./content.less");
+			if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+			update(newContent);
+		});
+	}
+	// When the module is disposed, remove the <style> tags
+	module.hot.dispose(function() { update(); });
+}
+
+/***/ }),
+/* 11 */
+/***/ (function(module, exports, __webpack_require__) {
+
+// style-loader: Adds some css to the DOM by adding a <style> tag
+
+// load the styles
+var content = __webpack_require__(7);
+if(typeof content === 'string') content = [[module.i, content, '']];
+// add the styles to the DOM
+var update = __webpack_require__(1)(content, {});
+if(content.locals) module.exports = content.locals;
+// Hot Module Replacement
+if(false) {
+	// When the styles change, update the <style> tags
+	if(!content.locals) {
+		module.hot.accept("!!C:\\Users\\gogogoal\\AppData\\Roaming\\npm\\node_global\\node_modules\\css-loader\\index.js!../../node_modules/less-loader/dist/index.js!./header.less", function() {
+			var newContent = require("!!C:\\Users\\gogogoal\\AppData\\Roaming\\npm\\node_global\\node_modules\\css-loader\\index.js!../../node_modules/less-loader/dist/index.js!./header.less");
+			if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+			update(newContent);
+		});
+	}
+	// When the module is disposed, remove the <style> tags
+	module.hot.dispose(function() { update(); });
+}
+
+/***/ }),
+/* 12 */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__.p + "5237b815529879b713c1255539c0c4de.jpg";
+
+/***/ }),
+/* 13 */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__.p + "901cdcc6bebd2ae20b9c503da1a6a190.png";
+
+/***/ }),
+/* 14 */
 /***/ (function(module, exports) {
 
 var g;
@@ -650,7 +748,7 @@ module.exports = g;
 
 
 /***/ }),
-/* 9 */
+/* 15 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -771,7 +869,7 @@ function fromByteArray (uint8) {
 
 
 /***/ }),
-/* 10 */
+/* 16 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -785,9 +883,9 @@ function fromByteArray (uint8) {
 
 
 
-var base64 = __webpack_require__(9)
-var ieee754 = __webpack_require__(11)
-var isArray = __webpack_require__(12)
+var base64 = __webpack_require__(15)
+var ieee754 = __webpack_require__(17)
+var isArray = __webpack_require__(18)
 
 exports.Buffer = Buffer
 exports.SlowBuffer = SlowBuffer
@@ -2565,10 +2663,10 @@ function isnan (val) {
   return val !== val // eslint-disable-line no-self-compare
 }
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(8)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(14)))
 
 /***/ }),
-/* 11 */
+/* 17 */
 /***/ (function(module, exports) {
 
 exports.read = function (buffer, offset, isLE, mLen, nBytes) {
@@ -2658,7 +2756,7 @@ exports.write = function (buffer, value, offset, isLE, mLen, nBytes) {
 
 
 /***/ }),
-/* 12 */
+/* 18 */
 /***/ (function(module, exports) {
 
 var toString = {}.toString;
@@ -2669,22 +2767,22 @@ module.exports = Array.isArray || function (arr) {
 
 
 /***/ }),
-/* 13 */
+/* 19 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // require("./style.css");
-__webpack_require__(0);
+__webpack_require__(2);
 var oBody = document.body;
 //引入头部模块
-var oHeader = __webpack_require__(3);
+var oHeader = __webpack_require__(5);
 // console.log(oHeader);
     oBody.appendChild(oHeader());
 
-var oContentFn = __webpack_require__(1);
+var oContentFn = __webpack_require__(3);
 var oDOM = oContentFn();
     oBody.appendChild(oDOM);
 
-var oFooterDOM = __webpack_require__(2)();
+var oFooterDOM = __webpack_require__(4)();
 	oBody.appendChild(oFooterDOM);
 
 /***/ })

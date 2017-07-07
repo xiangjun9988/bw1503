@@ -1,0 +1,1 @@
+document.write("<section>我是content</section>");

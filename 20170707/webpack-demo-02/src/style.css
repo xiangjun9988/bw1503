@@ -1,0 +1,16 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+header{
+	height: 60px;
+	background: red;
+}
+section{
+	height: 400px;
+	background: orange;
+}
+footer{
+	height: 80px;
+	background: pink;
+}

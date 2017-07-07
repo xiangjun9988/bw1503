@@ -82,8 +82,8 @@ if(content.locals) module.exports = content.locals;
 if(false) {
 	// When the styles change, update the <style> tags
 	if(!content.locals) {
-		module.hot.accept("!!C:\\Users\\gogogoal\\AppData\\Roaming\\npm\\node_global\\node_modules\\css-loader\\index.js!./style.css", function() {
-			var newContent = require("!!C:\\Users\\gogogoal\\AppData\\Roaming\\npm\\node_global\\node_modules\\css-loader\\index.js!./style.css");
+		module.hot.accept("!!C:\\Users\\gogogoal\\AppData\\Roaming\\npm\\node_global\\node_modules\\css-loader\\index.js!../node_modules/less-loader/dist/index.js!./style.less", function() {
+			var newContent = require("!!C:\\Users\\gogogoal\\AppData\\Roaming\\npm\\node_global\\node_modules\\css-loader\\index.js!../node_modules/less-loader/dist/index.js!./style.less");
 			if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
 			update(newContent);
 		});
@@ -96,13 +96,24 @@ if(false) {
 /* 1 */
 /***/ (function(module, exports) {
 
-document.write("<section>我是content</section>");
+//暴露接口
+module.exports = function(){
+	var oContent = document.createElement("section");
+	oContent.innerHTML = "这三天学了git，webpack，开心死了";
+	return oContent;
+}
 
 /***/ }),
 /* 2 */
 /***/ (function(module, exports) {
 
-document.write("<footer>我是footer</footer>");
+// document.write("<footer>我是footer</footer>");
+//暴露接口
+module.exports = function(){
+	var oFooter = document.createElement("footer");
+	oFooter.innerHTML = "这是我们1503班特有的内容";
+	return oFooter;
+}
 
 /***/ }),
 /* 3 */
@@ -133,7 +144,7 @@ exports = module.exports = __webpack_require__(5)(undefined);
 
 
 // module
-exports.push([module.i, "*{\r\n\tmargin: 0;\r\n\tpadding: 0;\r\n}\r\nheader{\r\n\theight: 60px;\r\n\tbackground: red;\r\n}\r\nsection{\r\n\theight: 400px;\r\n\tbackground: orange;\r\n}\r\nfooter{\r\n\theight: 80px;\r\n\tbackground: pink;\r\n}", ""]);
+exports.push([module.i, "* {\n  margin: 0;\n  padding: 0;\n}\nbody header {\n  height: 60px;\n  background: red;\n}\nbody section {\n  height: 400px;\n  background: pink;\n}\nbody footer {\n  height: 80px;\n  background: pink;\n}\n", ""]);
 
 // exports
 
@@ -2661,13 +2672,20 @@ module.exports = Array.isArray || function (arr) {
 /* 13 */
 /***/ (function(module, exports, __webpack_require__) {
 
+// require("./style.css");
 __webpack_require__(0);
+var oBody = document.body;
 //引入头部模块
 var oHeader = __webpack_require__(3);
 // console.log(oHeader);
-document.body.appendChild(oHeader());
-__webpack_require__(1);
-__webpack_require__(2);
+    oBody.appendChild(oHeader());
+
+var oContentFn = __webpack_require__(1);
+var oDOM = oContentFn();
+    oBody.appendChild(oDOM);
+
+var oFooterDOM = __webpack_require__(2)();
+	oBody.appendChild(oFooterDOM);
 
 /***/ })
 /******/ ]);
